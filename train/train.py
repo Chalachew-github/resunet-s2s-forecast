@@ -5,9 +5,7 @@ xr.set_options(display_style='text')
 from datetime import datetime
 import time
 import sys
-sys.path.insert(1, '/das_00/Chalachew/Deep_learning/S2S_AI/S2S_weekly/')
-#sys.path.insert(1, '/das_00/Chalachew/Deep_learning/S2S_AI/S2S_rank4/models/')
-#sys.path.insert(1, '/das_00/Chalachew/Deep_learning/S2S_AI/S2S_rank4/results/')
+sys.path.insert(1, '/das_00/resunet-s2s-forecast/')
 
 from utils.helper_load_data import get_data, get_basis
 from utils.helper_preprocess import preprocess_input
@@ -59,12 +57,8 @@ for v in ['tp']:
         # feature variables
         if v == 't2m':
             #ls_var_list = [[v, 'msl','gh200','gh500','gh850','q200','q500','q850', 't200', 't500', 't850', 'u200','u500', 'u850','v200','v500','v850','sst','ttr','tcw','tcc']]# all
-            ls_var_list = [[v, 'msl', 'sst', 'ttr', 'tcw', 'tcc']]  # Surface
-            #ls_var_list = [[v, 'gh200','gh500','gh850','q200','q500','q850', 't200', 't500', 't850', 'u200','u500', 'u850','v200','v500','v850']]# atmosphere
         else:
             #ls_var_list = [[v, 'msl','gh200','gh500','gh850','q200','q500','q850', 't200', 't500', 't850', 'u200','u500', 'u850','v200','v500','v850','sst','ttr','tcw','tcc']]# all
-            #ls_var_list = [[v, 'msl', 'sst', 'ttr', 'tcw', 'tcc']]  # Surface
-            ls_var_list = [[v, 'gh200','gh500','gh850','q200','q500','q850', 't200', 't500', 't850', 'u200','u500', 'u850','v200','v500','v850']]# atmosphere
 
         var_list = ls_var_list[0]
 
