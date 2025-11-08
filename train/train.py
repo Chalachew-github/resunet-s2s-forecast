@@ -5,7 +5,7 @@ xr.set_options(display_style='text')
 from datetime import datetime
 import time
 import sys
-sys.path.insert(1, '/das_00/resunet-s2s-forecast/')
+sys.path.insert(1, '/resunet-s2s-forecast/')
 
 from utils.helper_load_data import get_data, get_basis
 from utils.helper_preprocess import preprocess_input
