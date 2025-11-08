@@ -14,7 +14,7 @@ from utils.helper_datagenerator import DataGeneratorGlobal, DataGeneratorMultipa
 from utils.helper_train import fit_model, save_model_info
 from utils.paths import get_paths
 
-from models.unet import Unet
+#from models.unet import Unet
 from models.resunet import UnetWithResBlocks
 
 import warnings
