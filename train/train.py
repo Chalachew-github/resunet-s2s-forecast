@@ -15,23 +15,14 @@ from utils.helper_train import fit_model, save_model_info
 from utils.paths import get_paths
 
 from models.unet import Unet
-from models.standard_cnn import StandardCnn
-from models.unet_resnet import UnetWithResBlocks
+from models.resunet import UnetWithResBlocks
 
 import warnings
 warnings.simplefilter("ignore")
 import os
 import random as rn
 
-'''
-gpus = tf.config.experimental.list_physical_devices("/GPU")
-if gpus:
-    try:
-        for gpu in gpus:
-            tf.config.experimental.set_memory_growth(gpu, True)
-    except RuntimeError as e:
-        print(e)
-        '''
+
 # Disable all GPUs
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
@@ -51,9 +42,6 @@ cache_path, path_add_vars, path_model, path_pred, path_results, path_add_vars2 =
 for v in ['tp']:
     for lead_time in [0, 1, 2, 3, 4, 5]:
 
-        # v = 't2m'  # 'tp'  #
-        # lead_time = 0  # 1  #
-
         # feature variables
         if v == 't2m':
             #ls_var_list = [[v, 'msl','gh200','gh500','gh850','q200','q500','q850', 't200', 't500', 't850', 'u200','u500', 'u850','v200','v500','v850','sst','ttr','tcw','tcc']]# all
@@ -67,16 +55,12 @@ for v in ['tp']:
         # models architecture and hyper-parameters
         # =============================================================================
 
-        model_architecture = 'unet' #'basis_func'# 'conv_trans'  #
-        train_patches =  False  #
-        weighted_loss = True  #  False
-        ''''
-        if model_architecture != 'unet':
-            train_patches = True
-        print(f'Architecture: {model_architecture} \npatch-wise: {train_patches} \nweighted loss: {weighted_loss}')
-        '''
+        model_architecture = 'resunet' 
+        train_patches =  False  
+        weighted_loss = True 
+
         # load models and associated params
-        if model_architecture == 'unet':
+        if model_architecture == 'resunet':
             model = UnetWithResBlocks(v, train_patches, weighted_loss)#Unet(v, train_patches, weighted_loss)
         else:
             model = StandardCnn(v, model_architecture, weighted_loss)
