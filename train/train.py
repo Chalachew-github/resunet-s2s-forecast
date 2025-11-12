@@ -44,9 +44,9 @@ for v in ['tp']:
 
         # feature variables
         if v == 't2m':
-            #ls_var_list = [[v, 'msl','gh200','gh500','gh850','q200','q500','q850', 't200', 't500', 't850', 'u200','u500', 'u850','v200','v500','v850','sst','ttr','tcw','tcc']]# all
+            ls_var_list = [[v, 'msl','gh200','gh500','gh850','q200','q500','q850', 't200', 't500', 't850', 'u200','u500', 'u850','v200','v500','v850','sst','ttr','tcw','tcc']]# all
         else:
-            #ls_var_list = [[v, 'msl','gh200','gh500','gh850','q200','q500','q850', 't200', 't500', 't850', 'u200','u500', 'u850','v200','v500','v850','sst','ttr','tcw','tcc']]# all
+            ls_var_list = [[v, 'msl','gh200','gh500','gh850','q200','q500','q850', 't200', 't500', 't850', 'u200','u500', 'u850','v200','v500','v850','sst','ttr','tcw','tcc']]# all
 
         var_list = ls_var_list[0]
 
