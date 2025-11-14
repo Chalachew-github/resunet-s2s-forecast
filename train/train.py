@@ -6,7 +6,7 @@ from datetime import datetime
 import time
 import sys
 sys.path.insert(1, '/resunet-s2s-forecast/')
-from utils.utils_helper import (
+from utils.helper_train import (
     get_data, get_basis, preprocess_input,
     DataGeneratorGlobal, DataGeneratorMultipatch,
     fit_model, save_model_info, get_paths
