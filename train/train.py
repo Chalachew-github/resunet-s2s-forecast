@@ -6,13 +6,11 @@ from datetime import datetime
 import time
 import sys
 sys.path.insert(1, '/resunet-s2s-forecast/')
-
-from utils.helper_load_data import get_data, get_basis
-from utils.helper_preprocess import preprocess_input
-from utils.helper_datagenerator import DataGeneratorGlobal, DataGeneratorMultipatch
-
-from utils.helper_train import fit_model, save_model_info
-from utils.paths import get_paths
+from utils.utils_helper import (
+    get_data, get_basis, preprocess_input,
+    DataGeneratorGlobal, DataGeneratorMultipatch,
+    fit_model, save_model_info, get_paths
+)
 
 #from models.unet import Unet
 from models.resunet import UnetWithResBlocks
